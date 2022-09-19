@@ -1,0 +1,52 @@
+/* 全体で共通のCSSはこのファイルに記述する */
+body {
+  background-color: #ececec;
+  color: #333;
+  font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+}
+
+input {
+  height: 30px;
+}
+
+.main_container {
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  margin-top: 23px;
+  text-align: center;
+  font-size: 32px; 
+}
+
+/* 検索ボックス */
+#search_input {
+  position: relative;
+}
+
+#search_input > input {
+  width: 100%;
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
+#search_input > a {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#search_input svg {
+  width: 16px;
+  height: 16px;
+  margin-top: 9px;
+  margin-left: 8px;
+  fill: #ff8587;
+}
+/* 検索ボックスここまで */
