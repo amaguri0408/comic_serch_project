@@ -20,16 +20,16 @@
     <div>
       <p class="">作品50音順</p>
       <div class="button_50on">
-        <button>あ</button>
-        <button class="button_margin_left">か</button>
-        <button class="button_margin_left">さ</button>
-        <button class="button_margin_left">た</button>
-        <button class="button_margin_left">な</button>
-        <button class="button_margin_top">は</button>
-        <button class="button_margin_left button_margin_top">ま</button>
-        <button class="button_margin_left button_margin_top">や</button>
-        <button class="button_margin_left button_margin_top">ら</button>
-        <button class="button_margin_left button_margin_top">わ</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'あ'}})">あ</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'か'}})" class="button_margin_left">か</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'さ'}})" class="button_margin_left">さ</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'た'}})" class="button_margin_left">た</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'な'}})" class="button_margin_left">な</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'は'}})" class="button_margin_top">は</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'ま'}})" class="button_margin_left button_margin_top">ま</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'や'}})" class="button_margin_left button_margin_top">や</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'ら'}})" class="button_margin_left button_margin_top">ら</button>
+        <button @click="$router.push({name: 'Fifty', params: {char: 'わ'}})" class="button_margin_left button_margin_top">わ</button>
       </div>
     </div>
     <div>
