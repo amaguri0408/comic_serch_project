@@ -24,14 +24,19 @@
       <button @click="clickChar(fiveChars[3])" class="five_btn" v-bind:class="{active: fiveActiveNum === 3}">{{ fiveChars[3] }}</button>
       <button @click="clickChar(fiveChars[4])" class="five_btn" v-bind:class="{active: fiveActiveNum === 4}">{{ fiveChars[4] }}</button>
     </div>
+    <div>
+      <SearchedComicSegment v-for="(value, index) in comics" :key="index"
+        :id="value.id" :title="value.title" :author="value.author" :raw_author="value.raw_author"
+        :imageUrl="value.img_url" :apps="value.apps">
+      </SearchedComicSegment>
+    </div>
   </div>
 </template>
 <script>
-// 必要なものはここでインポートする
-// @は/srcの同じ意味です
 // import something from '@/components/something.vue';
-// import { baseUrl } from '@/assets/config.js';
-// import axios from "axios";
+import { baseUrl } from '@/assets/config.js';
+import axios from "axios";
+import SearchedComicSegment from '@/components/SearcedComicSegment.vue'
 
 // console.log(this.$route.query.test);
 
@@ -51,10 +56,12 @@ const fiftyCharList = [
 export default {
   name: 'Home',
   components: {
+    SearchedComicSegment
   },
   data() {
   // Vue.jsで使う変数はここに記述する
     return {
+      comics: [],
     };
   },
   computed: {
@@ -109,12 +116,22 @@ export default {
     }
   },
   methods: {
-    clickChar(char) {
+    async clickChar(char) {
       if (this.fiftyChar === char || char === "　") return 
       this.$router.push({name: 'Fifty', params: {char: char}})
+      await this.getComics()
     },
+    async getComics() {
+      try{
+        const res = await axios.get(baseUrl + "/api/comics?fifty=" + this.fiftyChar)
+        this.comics = res.data.data
+      } catch (e) {
+        console.log(e)
+      }
+    }
   },
   created: async function() {
+    await this.getComics()
   }
 }
 </script>

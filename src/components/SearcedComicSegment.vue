@@ -1,20 +1,25 @@
 <template>
   <div>
     <div class="comicSegment">
-      <!-- <div class="left">
-        <img class="comicImg" :src="imageUrl">
-      </div> -->
-      <div class="right">
-        <p class="comicTitle">{{ title }}</p>
-        <p class="timestamp">作者 {{ author }}</p>
-        <div class="appImgSegment">
-            <img class="appImg" v-for="(app, index) in apps" :key="index" 
-                :src="app.imgSrc" :alt="app.name">
+      <a :href="'/comic/' + id">
+        <!-- <div class="left">
+          <img class="comicImg" :src="imageUrl">
+        </div> -->
+        <div class="right">
+          <p class="comicTitle">{{ title }}</p>
+          <p class="timestamp">{{ author_view }}</p>
+          <div class="appImgSegment">
+              <img class="appImg" v-for="(app, index) in apps" :key="index" 
+                  :src="app.img_url" :alt="app.name">
+          </div>
         </div>
-      </div>
-      <!-- <div class="left">
-        <img class="appImg" :src="imageUrl">
-      </div>-->
+        <!-- <div>
+          <SearchedComicSegment v-for="(value, index) in comics" :key="index"
+            :id="value.id" :title="value.title" :author="value.author"
+            :imageUrl="value.imageUrl" :apps="value.apps">
+          </SearchedComicSegment>
+        </div> -->
+      </a>
     </div>
   </div>
 </template>
@@ -24,14 +29,18 @@ export default {
   name: "SearchedComicSegment",
   props: {
     id: {
-      type: String,
-      default: ""
+      type: Number,
+      default: null,
     },
     title: {
       type: String,
       default: "error",
     },
     author: {
+      type: String,
+      default: "",
+    },
+    raw_author: {
       type: String,
       default: "",
     },
@@ -43,6 +52,18 @@ export default {
       type: Array,
     },
   },
+  data() {
+    return {
+      author_view: "",
+    }
+  },
+  created() {
+    if (this.author) {
+      this.author_view = this.author
+    } else {
+      this.author_view = this.raw_author
+    }
+  }
 };
 </script>
 
@@ -75,6 +96,7 @@ export default {
 }
 
 .comicTitle {
+  color: #333;
   margin-top: 6px;
   margin-bottom: 0px;
   margin-left: 10px;
