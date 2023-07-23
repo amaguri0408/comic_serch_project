@@ -1,8 +1,17 @@
 <template>
   <div>
     <h1 class="title">
-      漫画検索
+      <a @click="$router.push({name: 'Home'})">
+        漫画検索
+      </a>
     </h1>
+    <!-- <a id="search_icon_link" @click="$router.push({name: 'Home'})">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+    </a> -->
+    <div class="infoSegment">
+      <h3>{{ title }}</h3>
+      <p>{{ author }}</p>
+    </div>
     <div>
       <h2>掲載しているアプリ一覧</h2>
       <AppSegment v-for="(app, index) in apps" :key="index"
@@ -30,6 +39,8 @@ export default {
   data() {
   // Vue.jsで使う変数はここに記述する
     return {
+      title: "はなにあらし",
+      author: "古鉢るか",
       apps: [
         {
           title: "マンガONE",
@@ -60,6 +71,20 @@ export default {
 
 <style scoped>
 
+.infoSegment {
+  background-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc; 
+}
+
+.infoSegment > h3 {
+  margin: 10px 0px 0px 15px;
+}
+
+.infoSegment > p {
+  margin: 5px 0px 10px 15px;
+}
 
 /* サブ見出し */
 h2 {

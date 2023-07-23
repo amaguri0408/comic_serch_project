@@ -16,9 +16,15 @@
         </div>
       </form>
 
+      </div>
+        {{ searchedWord }}の検索結果
+      <div>
     </div>
-      {{ searchedWord }}の検索結果
     <div>
+      <SearchedComicSegment v-for="(value, index) in comics" :key="index"
+        :id="value.id" :title="value.title" :author="value.author"
+        :imageUrl="value.imageUrl" :apps="value.apps">
+      </SearchedComicSegment>
     </div>
   </div>
 </template>
@@ -26,17 +32,53 @@
 // 必要なものはここでインポートする
 // @は/srcの同じ意味です
 // import something from '@/components/something.vue';
+import SearchedComicSegment from '@/components/SearcedComicSegment.vue'
 // import { baseUrl } from '@/assets/config.js';
 // import axios from "axios";
 
 export default {
   name: 'Search',
   components: {
+    SearchedComicSegment,
   },
   data() {
   // Vue.jsで使う変数はここに記述する
     return {
       search_word: "",
+      comics: [
+        {
+          id: "id1",
+          title: "はなにあらし",
+          author: "古鉢るか",
+          imageUrl: "",
+          apps: [
+            {
+              imgSrc: "https://play-lh.googleusercontent.com/W93gCYbSERAPXq7czOGTG27W00qXokzuXnfXF2f5EB3BwYn84zL-t38VPFXXqkAD5A",
+              name: "サンデーうぇぶり"
+            },
+            {
+              imgSrc: "https://play-lh.googleusercontent.com/DnytEYH5QAmkuQg6q5yFJBKYZWpLbCda6AUkyCDzfR9IAgkfCH1mGVGYRzddxL0CIX45",
+              name: "マンガONE"
+            },
+          ]
+        },
+        {
+          id: "id1",
+          title: "はなにあらし",
+          author: "古鉢るか",
+          imageUrl: "",
+          apps: [
+            {
+              imgSrc: "https://play-lh.googleusercontent.com/W93gCYbSERAPXq7czOGTG27W00qXokzuXnfXF2f5EB3BwYn84zL-t38VPFXXqkAD5A",
+              name: "サンデーうぇぶり"
+            },
+            {
+              imgSrc: "https://play-lh.googleusercontent.com/DnytEYH5QAmkuQg6q5yFJBKYZWpLbCda6AUkyCDzfR9IAgkfCH1mGVGYRzddxL0CIX45",
+              name: "マンガONE"
+            },
+          ]
+        },
+      ]
     };
   },
   computed: {
@@ -48,7 +90,7 @@ export default {
     async search() {
       if (this.search_word === this.searchedWord) return 
       this.$router.push({name: "Search", query: {word: this.search_word}})
-      console.log(this.search_word)
+      // console.log(this.search_word)
     },
   },
   created: async function() {

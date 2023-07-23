@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     async search() {
-      console.log(this.search_word)
+      // console.log(this.search_word)
     },
   },
   created: async function() {
