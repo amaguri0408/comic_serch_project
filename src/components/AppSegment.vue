@@ -55,8 +55,11 @@ export default {
   },
   created() {
     // this.app.platform_typeがアプリを含む場合はtrue
-
-    if (!this.app.platform_type.match(/アプリ/)) {
+    if (this.app.platform_type.match(/アプリ/) ||
+        this.app.platform_type === "app" ||
+        this.app.platform_type === "both") {
+      this.is_app = true;
+    } else {
       this.is_app = false;
     }
   },

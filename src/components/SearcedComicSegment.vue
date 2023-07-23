@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="comicSegment">
-      <a :href="'/comic/' + id">
+      <a @click="$router.push({name: 'Comic', params: {id: id}})">
         <!-- <div class="left">
           <img class="comicImg" :src="imageUrl">
         </div> -->
