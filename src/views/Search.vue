@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1 class="title">
-      漫画検索
+      <a @click="$router.push({name: 'Home'})">
+        コミックサーチ
+      </a>
     </h1>
     <div>
 

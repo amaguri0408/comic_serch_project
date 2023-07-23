@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1 class="title">
-      漫画検索
+      <a @click="$router.push({name: 'Home'})">
+        コミックサーチ
+      </a>
     </h1>
     <div class="fifty_band">
       <button @click="clickChar('あ')" class="fifty_btn" v-bind:class="{active: fiftyLabel === 'あ'}">あ</button>

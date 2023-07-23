@@ -2,7 +2,7 @@
   <div>
     <h1 class="title">
       <a @click="$router.push({name: 'Home'})">
-        漫画検索
+        コミックサーチ
       </a>
     </h1>
     <!-- <a id="search_icon_link" @click="$router.push({name: 'Home'})">

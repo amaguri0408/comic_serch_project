@@ -73,7 +73,6 @@ export default {
       // console.log(this.search_word)
     },
     async getApps() {
-      console.log("(^^)")
       // headerを指定する
       const headers = {'Authorization' : ''};
   
@@ -82,12 +81,10 @@ export default {
         // crawled_atがある場合のみ表示する
         var apps = []
         for (var i = 0; i < res.data.data.length; i++) {
-          console.log(res.data.data[i].crawled_at)
           if (res.data.data[i].crawled_at !== "-") {
             apps.push(res.data.data[i])
           }
         }
-        console.log(apps)
         this.apps = apps
       }catch(e) {
         console.log("error")
