@@ -1,7 +1,10 @@
 .DS_Store
 node_modules
 /dist
-
+/lambda_copy
+/database
+/lambda
+/scraping
 
 # local env files
 .env.local
