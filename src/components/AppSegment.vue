@@ -2,7 +2,8 @@
   <div>
     <div class="appSegment">
       <div class="left">
-        <img class="appImg" :src="imageUrl">
+        <img v-if="is_app" class="appImg" :src="imageUrl">
+        <img v-else class="siteIcon" :src="imageUrl">
       </div>
       <div class="right">
         <p class="comicTitle">{{ title }}</p>
@@ -42,6 +43,22 @@ export default {
       type: String,
       default: "",
     },
+    app: {
+      type: Object,
+      default: () => {},
+    }
+  },
+  data() {
+    return {
+      is_app: true,
+    }
+  },
+  created() {
+    // this.app.platform_typeがアプリを含む場合はtrue
+
+    if (!this.app.platform_type.match(/アプリ/)) {
+      this.is_app = false;
+    }
   },
 };
 </script>
@@ -65,7 +82,14 @@ export default {
   height: 50px;
   margin: 10px 10px 0px 10px;
   float: left;
-  border-radius: 5px
+  border-radius: 10px
+}
+
+.siteIcon {
+  width: 50px;
+  height: 50px;
+  margin: 10px 10px 0px 10px;
+  float: left;
 }
 
 .comicTitle {
