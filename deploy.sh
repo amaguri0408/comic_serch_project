@@ -56,7 +56,7 @@ s3_deploy(){
 
 s3_update(){
     npm run build
-    aws s3 cp ./dist s3://${name} --recursive --acl public-read
+    aws s3 cp ./dist s3://${name} --recursive 
 }
 
 deletename(){
