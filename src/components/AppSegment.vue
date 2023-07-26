@@ -70,7 +70,7 @@ export default {
 
 .appSegment {
   background: #fff;
-  margin-top: 10px;
+  margin-top: 5px;
   border: solid;
   border-width: 1px;
   border-color: #ccc;

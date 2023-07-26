@@ -8,6 +8,7 @@ body {
   min-height: 100vh;
 }
 
+/* ヘッダーとフッター */
 .page-container {
   min-height: 100vh;
   display: flex;
@@ -18,7 +19,6 @@ body {
     flex: 1 0 auto;  /* This line will push the footer to the bottom of the page */
 }
 
-/* ヘッダーとフッター */
 .header {
   position: sticky;
   z-index: 100;
@@ -54,6 +54,13 @@ body {
 
 #app {
   padding-top: 20px;
+}
+/* ヘッダー・フッターここまで */
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 右上検索ボタン */
@@ -107,7 +114,7 @@ input {
 #search_input svg {
   width: 16px;
   height: 16px;
-  margin-top: 9px;
+  margin-top: 6px;
   margin-left: 8px;
   fill: #ff8587;
 }

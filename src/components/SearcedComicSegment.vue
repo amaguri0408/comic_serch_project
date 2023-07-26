@@ -6,8 +6,8 @@
           <img class="comicImg" :src="imageUrl">
         </div> -->
         <div class="right">
-          <p class="comicTitle">{{ title }}</p>
-          <p class="timestamp">{{ author_view }}</p>
+          <p class="comicTitle ellipsis">{{ title }}</p>
+          <p class="timestamp ellipsis">{{ author_view }}</p>
           <div class="appImgSegment">
               <img class="appImg" v-for="(app, index) in apps" :key="index" 
                   :src="app.img_url" :alt="app.name">
@@ -71,7 +71,7 @@ export default {
 
 .comicSegment {
   background: #fff;
-  margin-top: 10px;
+  margin-top: 5px;
   height: 100px;
   border: solid;
   border-width: 1px;
@@ -97,10 +97,8 @@ export default {
 
 .comicTitle {
   color: #333;
-  margin-top: 6px;
-  margin-bottom: 0px;
-  margin-left: 10px;
-  font-size: 17px;
+  margin: 6px 6px 0px 10px;
+  font-size: 16px;
 }
 
 .timestamp {

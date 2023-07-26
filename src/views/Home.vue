@@ -135,7 +135,7 @@ p {
 
 /* サブ見出し */
 h2 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #ccc;
