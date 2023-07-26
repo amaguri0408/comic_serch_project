@@ -1,8 +1,5 @@
 <template>
   <div>
-    <h1 class="title">
-      コミックサーチ
-    </h1>
     <div>
 
       <form class="">

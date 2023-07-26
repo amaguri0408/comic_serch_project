@@ -1,10 +1,5 @@
 <template>
   <div>
-    <h1 class="title">
-      <a @click="$router.push({name: 'Home'})">
-        コミックサーチ
-      </a>
-    </h1>
     <div class="fifty_band">
       <button @click="clickChar('あ')" class="fifty_btn" v-bind:class="{active: fiftyLabel === 'あ'}">あ</button>
       <button @click="clickChar('か')" class="fifty_btn" v-bind:class="{active: fiftyLabel === 'か'}">か</button>

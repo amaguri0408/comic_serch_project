@@ -3,6 +3,57 @@ body {
   background-color: #ececec;
   color: #333;
   font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrap {
+    flex: 1 0 auto;  /* This line will push the footer to the bottom of the page */
+}
+
+/* ヘッダーとフッター */
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #ccc;
+}
+
+.header-img {
+  height: 30px;
+  margin: 8px 0px 3px 0px;
+}
+
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  bottom: 0;
+  border-top: solid;
+  border-top-width: 1px;
+  border-top-color: #ccc;
+}
+
+.copyright {
+  color: #ccc
+}
+
+#app {
+  padding-top: 20px;
 }
 
 /* 右上検索ボタン */

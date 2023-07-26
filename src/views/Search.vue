@@ -1,10 +1,5 @@
 <template>
   <div>
-    <h1 class="title">
-      <a @click="$router.push({name: 'Home'})">
-        コミックサーチ
-      </a>
-    </h1>
     <div>
 
       <form class="">
