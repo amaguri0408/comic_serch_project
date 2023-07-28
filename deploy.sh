@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # 名前のデータ取る
-name=$(cat yourname.env | sed s/YOURNAME=//)
+# name=$(cat yourname.env | sed s/YOURNAME=//)
+name="comic-search.com"
 
 writename(){
     if [ "$(ls lambda/ | grep "${name}")" ]; then
@@ -50,12 +51,12 @@ lambda_update(){
 }
 
 s3_deploy(){
-    aws s3 mb s3://${name}-internship
+    aws s3 mb s3://${name} --region ap-northeast-1
 }
 
 s3_update(){
     npm run build
-    aws s3 cp ./dist s3://${name}-internship --recursive --acl public-read
+    aws s3 cp ./dist s3://${name} --recursive 
 }
 
 deletename(){
