@@ -2,23 +2,12 @@
   <div>
     <div>
       <p class="site-about">
-        漫画が無料で読めるかも。<br>
-        読みたい漫画を検索しよう！
+        マンガが無料で読めるかも。<br>
+        読みたいマンガを検索しよう！
       </p>
     </div>
     <div>
-
-      <form class="">
-        <div class="">
-          <div id="search_input">
-            <input type="text" placeholder="作品名/作者名" v-model="search_word" required>
-            <a @click="search">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
-            </a>
-          </div>
-        </div>
-      </form>
-
+      <SearchBoxSegment></SearchBoxSegment>
     </div>
     <div>
       <p class="">作品50音順</p>
@@ -50,9 +39,7 @@
   </div>
 </template>
 <script>
-// 必要なものはここでインポートする
-// @は/srcの同じ意味です
-// import something from '@/components/something.vue';
+import SearchBoxSegment from '@/components/SearchBoxSegment.vue';
 import AppSegment from '@/components/AppSegment.vue';
 import { baseUrl } from '@/assets/config.js';
 import axios from "axios";
@@ -61,6 +48,7 @@ export default {
   name: 'Home',
   components: {
     AppSegment,
+    SearchBoxSegment,
   },
   data() {
   // Vue.jsで使う変数はここに記述する
@@ -117,12 +105,15 @@ p {
 /* 50音順ボタン */
 .button_50on {
   /* background: #888; */
-  height: 125px;
+  height: 130px;
+  padding-left: 11px;
+  margin-bottom: 10px;
 }
 
 .button_50on button {
-  width: 59px;
-  height: 59px;
+  width: 62px;
+  height: 62px;
+  font-size: 18px;
   background: #fff;
   border: solid;
   border-color: #ccc;
