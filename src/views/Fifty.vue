@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SearchBoxSegment></SearchBoxSegment>
     <div class="fifty_band">
       <button @click="clickChar('あ')" class="fifty_btn" v-bind:class="{active: fiftyLabel === 'あ'}">あ</button>
       <button @click="clickChar('か')" class="fifty_btn" v-bind:class="{active: fiftyLabel === 'か'}">か</button>
@@ -29,6 +30,7 @@
 </template>
 <script>
 // import something from '@/components/something.vue';
+import SearchBoxSegment from '@/components/SearchBoxSegment.vue';
 import { baseUrl } from '@/assets/config.js';
 import axios from "axios";
 import SearchedComicSegment from '@/components/SearcedComicSegment.vue'
@@ -51,7 +53,8 @@ const fiftyCharList = [
 export default {
   name: 'Home',
   components: {
-    SearchedComicSegment
+    SearchedComicSegment,
+    SearchBoxSegment
   },
   data() {
   // Vue.jsで使う変数はここに記述する
