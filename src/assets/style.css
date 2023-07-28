@@ -53,7 +53,7 @@ body {
 }
 
 #app {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 /* ヘッダー・フッターここまで */
 
@@ -93,10 +93,12 @@ input {
 /* 検索ボックス */
 #search_input {
   position: relative;
+  margin-bottom: 10px;
 }
 
 #search_input > input {
   width: 100%;
+  padding-left: 5px;
   border: solid;
   border-width: 1px;
   border-radius: 5px;

@@ -1,6 +1,12 @@
 <template>
   <div>
     <div>
+      <p class="site-about">
+        漫画が無料で読めるかも。<br>
+        読みたい漫画を検索しよう！
+      </p>
+    </div>
+    <div>
 
       <form class="">
         <div class="">
@@ -100,6 +106,12 @@ export default {
 
 p {
   margin-bottom: 8px;
+}
+
+.site-about {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* 50音順ボタン */
